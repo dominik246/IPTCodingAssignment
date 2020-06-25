@@ -1,0 +1,15 @@
+﻿function ispis() {
+if (a == a) {
+var b = "b";
+let c = "c";
+}
+console.log(a);
+console.log(b);
+console.log(c);
+}
+var a = "b";
+ispis();
+
+Sljedeći isječak koda će throw-at error jer c u 8. redu nije definiran. Iz razloga što "let" definira
+iskljućivo unutar block-a ({}), dok "var" definira globalno. Tako da kada bi promjenili "let" u "var",
+kod bi ispisao "b b c".

@@ -1,0 +1,15 @@
+﻿public class Program
+{
+public static void Main()
+{
+IspisiNaEkran("Hello World");
+}
+public static void IspisiNaEkran (string text)
+{
+Console.WriteLine(text);
+IspisiNaEkran(text);
+}
+}
+
+Navedeni isječak koda će rekurzirati "Hello World" sve dok ne dođe do internog limita
+koji je predodređen u Roslynu, nakon kojeg će ispisati "Stack Overflow" i throw-at error.

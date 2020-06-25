@@ -1,0 +1,22 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+
+    <div class="main_div">
+        <div class="title">Age Calculator</div>
+        <div class="datepicker">
+            <form id="dateForm">
+                <label>Date: </label>
+                <input type="date" id="datepicker"/>
+                <input type="button" @onclick="() => DatePicker()" value="Submit" />
+            </form>
+        </div>
+
+        <div id="results" />
+    </div>
+
+@code {
+    private async Task DatePicker()
+    {
+        await JSRuntime.InvokeVoidAsync("datePickerSubmit");
+    }
+}
