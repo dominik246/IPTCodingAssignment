@@ -7,11 +7,10 @@
             <form id="dateForm">
                 <label>Date: </label>
                 <input type="date" id="datepicker" @onchange="() => DatePicker()"/>
-                @*<input type="button" @onclick="() => DatePicker()" value="Submit" />*@
             </form>
         </div>
 
-        <div id="results" onchange="resultsDivLoaded"/>
+        <div id="results"/>
     </div>
 
 @code {

@@ -1,7 +1,6 @@
 ﻿using AssignmentOne.Model;
 
 using System;
-using System.Linq;
 
 namespace AssignmentOne
 {
@@ -15,7 +14,7 @@ namespace AssignmentOne
         /// </summary>
         static void Main(string[] args)
         {
-            
+
         }
 
         private decimal SalaryCalculator(Employee voditelj)
