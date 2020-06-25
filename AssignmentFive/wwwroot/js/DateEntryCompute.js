@@ -1,6 +1,7 @@
-﻿async function datePickerSubmit() {
-    let form = document.getElementById("datepicker").value;
+﻿let intervalAlreadySet = false;
 
+async function output() {
+    let form = document.getElementById("datepicker").value;
     if (form === "") {
         await buildResults(["Please select a date."]);
         return;
@@ -35,5 +36,12 @@ async function buildResults(arr) {
         child.innerHTML = item;
         child.className = "paragraphItem";
         container.appendChild(child);
+    }
+}
+
+async function datePickerSubmit() {
+    if (intervalAlreadySet === false) { // makes sure we only set the interval once.
+        setInterval(function () { output(); }, 1000);
+        intervalAlreadySet = true;
     }
 }
