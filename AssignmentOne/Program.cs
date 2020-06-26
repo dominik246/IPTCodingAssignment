@@ -1,5 +1,4 @@
 ﻿using AssignmentOne.Model;
-
 using System;
 
 namespace AssignmentOne
@@ -19,7 +18,7 @@ namespace AssignmentOne
 
         private decimal SalaryCalculator(Employee voditelj)
         {
-            if (voditelj.TeamMembers.Count == 0)
+            if (voditelj?.TeamMembers?.Count == null || voditelj.TeamMembers.Count == 0)
             {
                 Console.WriteLine("Nije Voditelj!");
                 return 0;
@@ -27,9 +26,9 @@ namespace AssignmentOne
 
             decimal totalSalary = voditelj.Salary;
 
-            foreach (Employee employee in voditelj.TeamMembers) // moze se isti rezultat dobiti s
-            {                                                   // voditelj.TeamMembers.Sum(s => totalSalary += s.Salary)
-                totalSalary += employee.Salary;                 // ali sporije.
+            foreach (Employee employee in voditelj.TeamMembers)
+            {
+                totalSalary += employee.Salary;
             }
 
             return totalSalary;
